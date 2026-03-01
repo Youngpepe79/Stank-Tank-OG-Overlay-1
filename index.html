@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stank Tank Overlay</title>
 
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 1920px;
+  height: 1080px;
+  background: transparent;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #39ff14; }
+  50% { box-shadow: 0 0 25px #9b5cff; }
+  100% { box-shadow: 0 0 10px #39ff14; }
+}
+
+.frame {
+  border: 4px solid #39ff14;
+  border-radius: 16px;
+  animation: glow 3s infinite;
+  background: rgba(0,0,0,0.4);
+}
+
+/* Webcam */
+#webcam {
+  position: absolute;
+  top: 90px;
+  left: 90px;
+  width: 640px;
+  height: 360px;
+}
+
+/* Chat */
+#chat {
+  position: absolute;
+  top: 90px;
+  right: 90px;
+  width: 420px;
+  height: 600px;
+  padding: 12px;
+  color: #39ff14;
+  font-size: 18px;
+}
+
+/* Bottom bar */
+#bottom {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat {
+  width: 32%;
+  padding: 14px;
+  text-align: center;
+  color: #9b5cff;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/* Labels */
+.label {
+  position: absolute;
+  top: -34px;
+  left: 10px;
+  background: black;
+  padding: 4px 10px;
+  color: #39ff14;
+  font-weight: bold;
+  border-radius: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Webcam Frame -->
+<div id="webcam" class="frame">
+  <div class="label">LIVE CAM</div>
+</div>
+
+<!-- Chat Frame -->
+<div id="chat" class="frame">
+  <div class="label">CHAT</div>
+  <p>username: stinking it up 🔥</p>
+  <p>username: gassed up 💨</p>
+  <p>username: STANK TANK 🧪</p>
+</div>
+
+<!-- Bottom Stats -->
+<div id="bottom">
+  <div class="stat frame">Recent Sub</div>
+  <div class="stat frame">Recent Tip</div>
+  <div class="stat frame">Recent Follow</div>
+</div>
+
+</body>
+</html>
